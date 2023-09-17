@@ -28,9 +28,9 @@ logs:
   compress: false
 
 mysql:
-  # 用户名
+  # 用户名 go_web_mini
   username: root
-  # 密码
+  # 密码 HC6xwj7RT5dNkmkL
   password: 123456
   # 数据库名
   database: go_web_mini

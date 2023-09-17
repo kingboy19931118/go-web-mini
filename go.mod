@@ -6,6 +6,7 @@ require (
 	github.com/appleboy/gin-jwt/v2 v2.6.4
 	github.com/casbin/casbin/v2 v2.22.0
 	github.com/casbin/gorm-adapter/v3 v3.1.0
+	github.com/coreos/etcd v3.3.13+incompatible
 	github.com/denisenkom/go-mssqldb v0.9.0 // indirect
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/gin-gonic/gin v1.6.3
