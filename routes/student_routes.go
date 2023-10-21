@@ -19,6 +19,7 @@ func InitStudentRoutes(r *gin.RouterGroup, authMiddleware *jwt.GinJWTMiddleware)
 		router.GET("/list", studentController.GetStudents)
 		router.POST("/create", studentController.CreateStudent)
 		router.PATCH("/update", studentController.UpdateStudent)
+		router.DELETE("/inClass/batch", studentController.BatchInClass)
 		router.DELETE("/delete/batch", studentController.BatchDeleteStudentByIds)
 	}
 	return r

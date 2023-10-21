@@ -47,6 +47,15 @@ func (ur StudentRepository) GetStudents(req *vo.StudentListRequest) ([]*model.St
 	if req.Gender != 0 {
 		db = db.Where("gender = ?", req.Gender)
 	}
+	if req.Status != 0 {
+		db = db.Where("status = ?", req.Status)
+	}
+	if req.Mobile != "" {
+		db = db.Where("mobile = ?", strings.TrimSpace(req.Mobile))
+	}
+	if req.Course != "" {
+		db = db.Where("course LIKE ?", fmt.Sprintf("%%%s%%", strings.TrimSpace(req.Course)))
+	}
 
 	// 当pageNum > 0 且 pageSize > 0 才分页
 	//记录总条数
@@ -73,7 +82,7 @@ func (ur StudentRepository) CreateStudent(user *model.Student) error {
 
 // 更新用户
 func (ur StudentRepository) UpdateStudent(user *model.Student) error {
-	return common.DB.Model(user).Updates(user).Error
+	return common.DB.Model(user).Save(user).Error
 }
 
 // 批量删除
